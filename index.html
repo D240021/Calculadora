@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="/Estilos/estilos.css">
 </head>
+
 <body>
-    Vea tamaño
-   <div>
+
+
+    <div id="calculadora">
         <h1>Casio</h1>
         <section id="parteOperaciones">
             <h3 id="operacion"></h3>
-            <h2 id="campoTrabajo"></h2>
-           
+            <h2 id="campoTrabajo">0</h2>
+
         </section>
 
         <section id="parteTecladoNumerico">
 
-            <button onclick="sumar()">Calcular</button>
+            <div class="tecla">+</div>
+            <div class="tecla">1</div>
+            <div class="tecla">2</div>
+            <div class="tecla">-</div>
+            <div class="tecla">3</div>
+            <div class="tecla">4</div>
+            <div class="tecla">*</div>
+            <div class="tecla">5</div>
+            <div class="tecla">6</div>
+            <div class="tecla">/</div>
+            <div class="tecla">7</div>
+            <div class="tecla">8</div>
+            <div class="tecla">=</div>
+            <div class="tecla">9</div>
+            <div class="tecla">0</div>
+            <div class="tecla" id="borrar">Borrar</div>
+            <div class="tecla" id="calc">Calc</div>
 
         </section>
 
-   </div>
+    </div>
+
+
+
 
     <script src="/Logica/main.js"></script>
 </body>
+
 </html>
