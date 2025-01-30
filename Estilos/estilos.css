@@ -1,0 +1,9 @@
+#campoTrabajo {
+    border: 2px black;
+    background-color: gray;
+    color: white;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    padding: 50px;
+}
