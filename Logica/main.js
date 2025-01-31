@@ -10,10 +10,22 @@ function sumar(){
 function mostrarEnCampoTrabajo(elementoHTML){
 
     let campoTrabajo = document.getElementById("campoTrabajo");
-    campoTrabajo.textContent = elementoHTML.textContent;
+
+    if(this.esCampoTrabajoVacio()){
+        campoTrabajo.textContent = elementoHTML.textContent;
+        return;
+    }
+
+    campoTrabajo.textContent += elementoHTML.textContent;
 }
 
 function borrarContenido(){
-    let campoTrabajo = document.getElementById("campoTrabajo");
-    campoTrabajo.textContent = 0;
+    if(!this.esCampoTrabajoVacio()){
+        let campoTrabajo = document.getElementById("campoTrabajo");
+        campoTrabajo.textContent = 0;
+    }
+}
+
+function esCampoTrabajoVacio(){
+    return document.getElementById("campoTrabajo").textContent == '0';
 }
