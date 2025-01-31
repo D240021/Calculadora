@@ -38,5 +38,6 @@ function existeSimboloAlFinal(texto) {
 
 function calcularResultado() {
 
+    let operador = CAMPO_TRABAJO.match("/[+-*/]/")[0];
 
 }
