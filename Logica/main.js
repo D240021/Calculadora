@@ -1,4 +1,5 @@
 
+const OPERADORES_POSIBLES = new Set(['+', '/', '*','-']);
 
 function sumar(){
 
@@ -9,14 +10,19 @@ function sumar(){
 
 function mostrarEnCampoTrabajo(elementoHTML) {
     let campoTrabajo = document.getElementById("campoTrabajo");
-    let operadoresProhibidos = new Set(['+', '/', '*', '=']);
+    let operadoresInicialesProhibidos = new Set(['+', '/', '*']);
+    let contenidoElementoHTML = elementoHTML.textContent;
 
-    if (this.esCampoTrabajoVacio() && !operadoresProhibidos.has(elementoHTML.textContent)) {
-        campoTrabajo.textContent = elementoHTML.textContent;
+    if (this.esCampoTrabajoVacio() && !operadoresInicialesProhibidos.has(contenidoElementoHTML)) {
+        campoTrabajo.textContent = contenidoElementoHTML;
         return;
     }
 
-    campoTrabajo.textContent += elementoHTML.textContent;
+    if(existeSimboloAlFinal(campoTrabajo.textContent) && OPERADORES_POSIBLES.has(contenidoElementoHTML)){
+        return;
+    }   
+    
+    campoTrabajo.textContent += contenidoElementoHTML;
 }
 
 
@@ -31,7 +37,6 @@ function esCampoTrabajoVacio(){
     return document.getElementById("campoTrabajo").textContent == '0';
 }
 
-function contieneOperador(texto){
-    let operadoresLogicos = new Set(['+', '/', '*', '=','-']);
-    return operadoresLogicos.has(texto);
+function existeSimboloAlFinal(texto) {
+    return OPERADORES_POSIBLES.has(texto.slice(-1)); 
 }
