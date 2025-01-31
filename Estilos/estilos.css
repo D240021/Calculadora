@@ -29,10 +29,12 @@
     gap: 1rem;
     margin-top: 2%;
     justify-content: center;
+    
 }
 
 .tecla {
-    text-align: center;
+    display: grid;
+    place-content: center;
     width: 70px;
     height: 70px;
     border: 2.5px solid black;
