@@ -32,7 +32,9 @@
 
 .tecla {
     text-align: center;
-    width: 25%;
+    align-items: center;
+    width: 70px;
+    height: 70px;
     border: 2.5px solid black;
     padding: 0.5%;
     cursor: pointer;
