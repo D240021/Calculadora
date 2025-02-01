@@ -1,7 +1,7 @@
 
 const OPERADORES_POSIBLES = new Set(['+', '/', '*', '-']);
 const CAMPO_TRABAJO = document.getElementById("campoTrabajo");
-
+const CAMPO_OPERACION = document.getElementById("operacion");
 
 
 function mostrarEnCampoTrabajo(elementoHTML) {
@@ -25,6 +25,7 @@ function borrarContenido() {
     if (!this.esCampoTrabajoVacio()) {
 
         CAMPO_TRABAJO.textContent = 0;
+        CAMPO_OPERACION.textContent = '';
     }
 }
 
@@ -38,6 +39,31 @@ function existeSimboloAlFinal(texto) {
 
 function calcularResultado() {
 
-    let operador = CAMPO_TRABAJO.match("/[+-*/]/")[0];
+    let operador = CAMPO_TRABAJO.textContent.match(/[+\-*/]/)[0];
+
+    let [numero1, numero2] = CAMPO_TRABAJO.textContent.split(operador).map(Number);
+
+    let operacion = `${numero1}${operador}${numero2}`;
+
+    let resultado;
+
+    switch(operador){
+
+        case '+':
+            resultado = numero1 + numero2;
+            break;
+        case '-':
+            resultado = numero1 - numero2;
+            break;
+        case '/':
+            resultado = numero1 / numero2;
+            break;
+        default:
+            resultado = numero1 * numero2;
+    }
+
+    CAMPO_OPERACION.textContent = operacion;
+
+    CAMPO_TRABAJO.textContent = resultado;
 
 }
