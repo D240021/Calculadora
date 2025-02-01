@@ -1,16 +1,59 @@
+:root {
+    --color-principal : #F2CB05;
+    --color-parte-operaciones : #03A678;
+    --color-teclas : #F29F05;
+    --color-borde-teclas : #F28705;
+    --color-hover-teclas-comunes : #F28705;
+    --color-hover-tecla-delete : #f5782c;
+
+    --fuente-teclas : CasioFont;
+}
+
+*{
+    user-select: none;
+}
+
+@font-face {
+    font-family: 'Digital7';
+    src: url('../Fuentes/digital-7.ttf') format('ttf'),
+         url('../Fuentes/digital-7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'CasioFont';
+    src: url('../Fuentes/casio.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: CasioFont;
+}
 
 #calculadora {
-    border: 3px black;
-    width: 100%;
+    border: 3px solid black;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--color-principal);
+    border-radius: 5%;
+    padding: 15px 0 15px 0;
 }
 
 #parteOperaciones {
-    width: 50%;
-    background-color: gray;
+    width: 80%;
+    background-color: var(--color-parte-operaciones);
+    font-family: Digital7;
 }
 
 #campoTrabajo {
@@ -21,7 +64,7 @@
 }
 
 #parteTecladoNumerico {
-    width: 50%;
+    width: 80%;
     height: 80%;
     display: flex;
     flex-direction: row;
@@ -35,26 +78,35 @@
 .tecla {
     display: grid;
     place-content: center;
-    width: 70px;
-    height: 70px;
-    border: 2.5px solid black;
+    width: 60px;
+    height: 60px;
+    border: 2.5px solid var(--color-borde-teclas);
     padding: 0.5%;
     cursor: pointer;
     border-radius: 5%;
+    background-color: var(--color-teclas);
+    font-family: var(--fuente-teclas);
 }
 
 .tecla:hover {
-    background-color: darkmagenta;
+    background-color: var(--color-hover-teclas-comunes);
+    color: white;
 }
 
 #borrar:hover {
-    background-color: red;
+    background-color: var(--color-hover-tecla-delete);
     color: white;
-    border: 2.5px solid black;
 }
 
 #calc:hover {
     background-color: green;
     color: white;
     border: 2.5px solid black;
+}
+
+#operacion {
+    color: white;
+    display: grid;
+    place-content: end;
+    padding: 0 5% 0 5%;
 }
