@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="/Estilos/estilos.css">
+    <link rel="stylesheet" href="/Estilos/responsive.css">
+</head>
+
+<body>
+
+
+    <div id="calculadora">
+        <div id="encabezado">
+            <h1>Casio</h1>
+            <div id="recargaSolar">
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+                <div class="linea"></div>
+            </div>
+        </div>
+        <section id="parteOperaciones">
+            <h3 id="operacion"></h3>
+            <h2 id="campoTrabajo">0</h2>
+
+            
+        </section>
+        <section id="parteTecladoNumerico">
+
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">+</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">1</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">2</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">3</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">-</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">4</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">5</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">6</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">*</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">7</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">8</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">9</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">/</div>
+            <div class="tecla" onclick="mostrarEnCampoTrabajo(this)">0</div>
+            <div class="tecla" id="borrar" onclick="borrarContenido()">AC</div>
+            <div class="tecla" id="calc" onclick="calcularResultado()">=</div> 
+
+        </section>
+
+    </div>
+
+
+
+
+    <script src="/Logica/main.js"></script>
+</body>
+
+</html>

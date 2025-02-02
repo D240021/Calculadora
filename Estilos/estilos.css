@@ -1,0 +1,143 @@
+:root {
+    --color-principal: #F2CB05;
+    --color-parte-operaciones: #03A678;
+    --color-teclas: #F29F05;
+    --color-borde-teclas: #F28705;
+    --color-hover-teclas-comunes: #F28705;
+    --color-hover-tecla-delete: #f5782c;
+    --color-fondo-recarga-solar : #506266;
+    --color-fondo : #1E3A5F;
+
+    --fuente-teclas: CasioFont;
+}
+
+* {
+    user-select: none;
+}
+
+@font-face {
+    font-family: 'Digital7';
+    src: url('../Fuentes/digital-7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'CasioFont';
+    src: url('../Fuentes/casio.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #1E3A5F;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: CasioFont;
+    color: white;
+    font-size: 2em;
+}
+
+#calculadora {
+    border: .4em solid var(--color-hover-tecla-delete);
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-principal);
+    border-radius: 5%;
+    padding: 1em 0 1em 0;
+}
+
+#parteOperaciones {
+    width: 80%;
+    background-color: var(--color-parte-operaciones);
+    font-family: Digital7;
+}
+
+#campoTrabajo {
+    color: white;
+    display: grid;
+    place-content: end;
+    padding: 0 1em 0 1em;
+}
+
+#parteTecladoNumerico {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+.tecla {
+    display: grid;
+    place-content: center;
+    width: 3.75em;
+    height: 3.75em;
+    border: 0.125em solid var(--color-borde-teclas);
+    padding: 0.5%;
+    cursor: pointer;
+    border-radius: 5%;
+    background-color: var(--color-teclas);
+    font-family: var(--fuente-teclas);
+}
+
+.tecla:hover {
+    background-color: var(--color-hover-teclas-comunes);
+    color: white;
+}
+
+#borrar:hover {
+    background-color: var(--color-hover-tecla-delete);
+    color: white;
+}
+
+#calc:hover {
+    background-color: green;
+    color: white;
+    border: 0.125em solid black;
+}
+
+#operacion {
+    color: white;
+    display: grid;
+    place-content: end;
+    padding: 0 1em 0 1em;
+}
+
+#encabezado {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+#recargaSolar {
+
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-fondo-recarga-solar);
+    height: 4.375em;
+    padding: .35% 0.625em .5% 0.625em;
+    border-radius: 0.3125em;
+}
+
+.linea {
+    height: 100%;
+    background-color: black;
+    border: 0.03125em solid var(--color-principal);
+}
