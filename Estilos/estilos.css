@@ -1,22 +1,23 @@
 :root {
-    --color-principal : #F2CB05;
-    --color-parte-operaciones : #03A678;
-    --color-teclas : #F29F05;
-    --color-borde-teclas : #F28705;
-    --color-hover-teclas-comunes : #F28705;
-    --color-hover-tecla-delete : #f5782c;
+    --color-principal: #F2CB05;
+    --color-parte-operaciones: #03A678;
+    --color-teclas: #F29F05;
+    --color-borde-teclas: #F28705;
+    --color-hover-teclas-comunes: #F28705;
+    --color-hover-tecla-delete: #f5782c;
+    --color-fondo-recarga-solar : #506266;
 
-    --fuente-teclas : CasioFont;
+    --fuente-teclas: CasioFont;
 }
 
-*{
+* {
     user-select: none;
 }
 
 @font-face {
     font-family: 'Digital7';
     src: url('../Fuentes/digital-7.ttf') format('ttf'),
-         url('../Fuentes/digital-7.ttf') format('truetype');
+        url('../Fuentes/digital-7.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,10 +37,11 @@ body {
 
 h1 {
     font-family: CasioFont;
+    color: white;
 }
 
 #calculadora {
-    border: 3px solid black;
+    border: 5px solid var(--color-hover-tecla-delete);
     width: 40%;
     height: 100%;
     display: flex;
@@ -72,7 +74,6 @@ h1 {
     gap: 1rem;
     margin-top: 2%;
     justify-content: center;
-    
 }
 
 .tecla {
@@ -109,4 +110,31 @@ h1 {
     display: grid;
     place-content: end;
     padding: 0 5% 0 5%;
+}
+
+#encabezado {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+#recargaSolar {
+
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-fondo-recarga-solar);
+    height: 70px;
+    padding: .35% 10px .6% 10px;
+    border-radius: 5.3%;
+}
+
+.linea {
+    height: 100%;
+    background-color: black;
+    border: .5px solid var(--color-principal);
 }
