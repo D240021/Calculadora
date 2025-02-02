@@ -38,32 +38,12 @@ function existeSimboloAlFinal(texto) {
 }
 
 function calcularResultado() {
-
-    let operador = CAMPO_TRABAJO.textContent.match(/[+\-*/]/)[0];
-
-    let [numero1, numero2] = CAMPO_TRABAJO.textContent.split(operador).map(Number);
-
-    let operacion = `${numero1}${operador}${numero2}`;
-
-    let resultado;
-
-    switch(operador){
-
-        case '+':
-            resultado = numero1 + numero2;
-            break;
-        case '-':
-            resultado = numero1 - numero2;
-            break;
-        case '/':
-            resultado = numero1 / numero2;
-            break;
-        default:
-            resultado = numero1 * numero2;
+    try {
+        let expresion = CAMPO_TRABAJO.textContent;
+        let resultado = Function(`"use strict"; return (${expresion})`)();
+        CAMPO_OPERACION.textContent = expresion;
+        CAMPO_TRABAJO.textContent = resultado;
+    } catch (error) {
+        CAMPO_TRABAJO.textContent = "Error";
     }
-
-    CAMPO_OPERACION.textContent = operacion;
-
-    CAMPO_TRABAJO.textContent = resultado;
-
 }
